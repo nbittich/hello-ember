@@ -23,4 +23,19 @@ module('Integration | Component | card', function (hooks) {
 
     assert.dom('.card-body').hasText('template block text');
   });
+  test('it renders our properties', async function (assert) {
+    await render(hbs`
+      <Card @title="coucou"/>
+    `);
+
+    assert.dom('.card-header').hasText('coucou');
+    assert.dom('.card-header').hasNoClass('bg-success');
+
+    await render(hbs`
+      <Card @title="coucou" @headerBg="bg-success"/>
+    `);
+
+    assert.dom('.card-header').hasText('coucou');
+    assert.dom('.card-header').hasClass('bg-success');
+  });
 });
