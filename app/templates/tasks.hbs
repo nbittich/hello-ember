@@ -1,5 +1,25 @@
 {{page-title "Tâches"}}
 <h1>Tâches</h1>
+
+<p class="me-1">Compteur: {{this.counter}}</p>
+<div class="d-inline-flex">
+  <button
+    class="btn btn-light"
+    type="button"
+    {{on "click" this.incr}}
+  >Incr</button>
+  <button
+    class="btn btn-light"
+    type="button"
+    {{on "click" this.decr}}
+  >Decr</button>
+  <button
+    class="btn btn-light"
+    type="button"
+    {{on "click" this.random}}
+  >Rand</button>
+</div>
+
 <table class="table table-bordered m-2">
   <thead>
     <tr>
